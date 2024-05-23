@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SONGS FOR YOU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .music-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .music-list li {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: -2px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>SONGS FOR YOU</h1>
+        
+    </header>
+
+    <section>
+        <h2>Recommended Albums</h2>
+        <ul class="music-list" id="music-list">
+            <!-- Dynamic content will be inserted here -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SONGS FOR YOU by MUSIX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const musicRecommendations = [
+            { title: "1.TAMIL HITS", artist: "ANIRUDH", genre: "ALL TIME HITS", url: "https://open.spotify.com/playlist/2aL3Ul0dWCUX93WSPmkLlw?si=ujXQDJUuQwK41y17N0PjsA&utm_source=copy-link" },
+            { title: "2.TAMIL MELODIES", artist: "PRADEEP KUMAR", genre: "OVERALL MELODIES", url: "https://open.spotify.com/playlist/6UYR6zH2SMDSrimvC1SfKG?si=VkTZMsToQYiAHZ86qiwkiw&utm_source=copy-link" },
+            { title: "3.TAMIL ROMANTIC SONGS", artist: "SHUFFLED", genre: "LOVE", url:"https://open.spotify.com/playlist/37i9dQZF1DWYfvJNWU1bKi?si=SjO8MFG_RZetFpivwofH4Q&utm_source=copy-link" },
+            { title: "4.TAMIL SAD SONGS", artist: "SHUFFLED", genre: "SAD", url:"https://open.spotify.com/playlist/51hmVNeZVcZQKaSecPoLs0?si=iobgUlcHTNmBpXFNHbbz0w&utm_source=copy-link" },
+            { title: "5.MALAYALAM HITS", artist: "SHUFFLED", genre: "HITS ", url:"https://open.spotify.com/playlist/37i9dQZF1DWTYKFynxp6Fs?si=sivWWQ9pQNmWmBXGrSmzaA&utm_source=copy-link" },
+            { title: "6.MALAYALAM LOVE SONGS", artist: "SHUFFLED", genre: "LOVE", url:"https://open.spotify.com/playlist/75mxLeOLm7uJRSqebqZQL9?si=lSgWV19lS22FK3Zydk9clw&utm_source=copy-link" },
+            { title: "7.MALAYALAM MELODIES", artist: "SHUFFLED", genre: "MELODIES", url:"https://open.spotify.com/playlist/7wkoe7ETgrhiDKrLbTZRVd?si=cj2TO4f0R3Sk07PgNtGTew&utm_source=copy-link" },
+            { title: "8.MALAYALAM SAD SONGS", artist: "SHUFFLED", genre: "SAD", url:"https://open.spotify.com/playlist/25mPEtQoqgkrBQEeIwAiBz?si=R9pOYLHeQaWhENrnJb4CiQ&utm_source=copy-link" },
+            { title: "9.HINDI HITS", artist: "SHUFFLED", genre: "HITS", url:"https://open.spotify.com/playlist/2bcSVCNr1AtyVrB3YP9dLl?si=CkaqT1d5ShWW94eU96erAw&utm_source=copy-link" },
+            { title: "10.HINDI LOVE SONGS", artist: "SHUFFLED", genre: "LOVE", url:"https://open.spotify.com/playlist/6kaEWP7NTNRVWnFbJT3MCh?si=vbJtIi9eSkS_b0pv7-_o5g&utm_source=copy-link" },
+            { title: "11.HINDI MELODIES", artist: "SHUFFLED", genre: "MELODIES", url:"https://open.spotify.com/playlist/105A9IjiVCv6iWft9qjxe2?si=EbCL2ae9R_m3wJ5OTIrHbg&utm_source=copy-link" },
+            { title: "12.HINDI SAD SONGS", artist: "SHUFFLED", genre: "SAD", url:"https://open.spotify.com/playlist/189Sow1xr7R94oSKs4kISc?si=2Ie6LE6KQGq5evfdinGnqw&utm_source=copy-link" },
+            { title: "13.TOP HIT SONGS", artist: "SHUFFLED", genre: "HITS", url:"https://open.spotify.com/playlist/4JZFUSM0jb3RauYuRPIUp8?si=x5ww3Km4Q5yCVDY6f3t4Rw&utm_source=copy-link" }
+        ];
+
+        const musicList = document.getElementById('music-list');
+
+        musicRecommendations.forEach(album => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <h3>${album.title}</h3>
+                <p>Artist: ${album.artist}</p>
+                <p>Genre: ${album.genre}</p>
+                <a href="${album.url}" target="_blank">Listen Now</a>
+            `;
+            musicList.appendChild(listItem);
+        });
+    
+    
+     
+</script>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "752d6bdf-29d5-42a1-8dc8-633c8bc28aef", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "2af2b864-fa71-4234-ba8a-3090733d5c5e", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+ 
+</body>
+
+
